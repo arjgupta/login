@@ -139,11 +139,7 @@ async function main() {
             await spnlogin.initialize();
             await spnlogin.login();
         }
-        else {
-            // login using az cli    
-            await executeAzCliCommand(`login --service-principal -u "${servicePrincipalId}" -p "${servicePrincipalKey}" --tenant "${tenantId}"`, true);
-            await executeAzCliCommand(`account set --subscription "${subscriptionId}"`, true);
-        }
+        
         console.log("Login successful.");    
     }
     catch (error) {
